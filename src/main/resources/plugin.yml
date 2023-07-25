@@ -1,23 +1,10 @@
 name: WorldEssentials
-version: "1.2.5"
-api: ["1.0.0"]
-author: Scallop
-description: Essentials for Worlds
-main: cn.yescallop.worldessentials.WorldEssentials
+version: "${pom.version}"
+api: ["1.0.11"]
+author: Scallop, PetteriM1
+main: idk.plugin.worldessentials.WorldEssentials
 
 permissions:
- worldessentials.command.gamerule:
-  description: "Allows the user to use /gamerule command"
-  default: op
- worldessentials.command.tpw:
-  description: "Allows the user to use /tpw command"
-  default: true
- worldessentials.command.tpw.other:
-  description: "Allows the user to use /tpw command on the other"
-  default: op
  worldessentials.command.setworldgamemode:
-  description: "Allows the user to use /setworldgamemode command"
+  description: "Allows the user to set a world's default gamemode"
   default: op
- worldessentials.command.spawn:
-  description: "Allows the user to use /spawn command"
-  default: true

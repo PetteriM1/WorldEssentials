@@ -1,4 +1,20 @@
-# Maven
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
 target/
-# IDEA
-.idea/
+.settings
+.project
+.classpath
+dependency-reduced-pom.xml
+.DS_Store
+.idea
+*.iml
+.factorypath
+nukkit-1.0-SNAPSHOT.jar
