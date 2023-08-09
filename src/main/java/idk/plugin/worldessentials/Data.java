@@ -170,16 +170,14 @@ public class Data {
             infos.put("xplevel", player.getExperienceLevel());
 
             if (player.getFoodData() != null) {
-                if (player.getFoodData().getLevel() == 0) {
-                    infos.put("food", 20);
-                } else if (player.getHealth() == 0) {
+                if (player.getHealth() <= 0) {
                     infos.put("food", 20);
                 } else {
                     infos.put("food", player.getFoodData().getLevel());
                 }
             }
 
-            if (player.getHealth() == 0) {
+            if (player.getHealth() <= 0) {
                 infos.put("health", 20);
             } else {
                 infos.put("health", player.getHealth());
@@ -354,16 +352,18 @@ public class Data {
 
         p.setExperience(c.getInt("xp"), c.getInt("xplevel"));
 
-        if (c.getInt("food") == 0) {
+        int food = c.getInt("food", -1);
+        if (food < 0 || food > 20) {
             p.getFoodData().setLevel(20);
         } else {
             p.getFoodData().setLevel(c.getInt("food"));
         }
 
-        if (c.getInt("health") == 0) {
+        int health = c.getInt("health");
+        if (health <= 0) {
             p.setHealth(20);
         } else {
-            p.setHealth(c.getInt("health"));
+            p.setHealth(health);
         }
 
         int tsr = c.getInt("timeSinceRest", -1);
